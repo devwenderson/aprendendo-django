@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Início {% endblock title %}
+
+{% block content %}
+<main>
+    <section>
+        <h2>Início</h2>
+        <p>Hello, World!</p>
+    </section>
+</main>
+{% endblock content %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock scripts %}
