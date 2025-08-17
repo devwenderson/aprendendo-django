@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dados do perfil {% endblock title %}
+
+{% block content %}
+<main>
+    <section>
+        <h2>Dados de {{ request.user }}</h2>
+    </section>
+</main>
+{% endblock content %}

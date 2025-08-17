@@ -7,6 +7,17 @@
     <title>{% block title %}Base{% endblock title %}</title>
 </head>
 <body>
+    <ul>
+        <li><a href="{% url 'inicio' %}">Início</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'user-detail' %}">Perfil</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'user-create' %}">Cadastre-se</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+
+    </ul>
     {% block header %}
     {% endblock header %}
 
