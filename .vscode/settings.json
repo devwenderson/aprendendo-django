@@ -1,0 +1,45 @@
+{
+    "editor.fontSize": 18,
+    "editor.fontFamily": " 'Geist Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "workbench.colorTheme": "Bearded Theme Coffee",
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.compactFolders": false,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/*/*.html": "django-html",
+        "**/templates/*": "django-html",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[django-html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json",
+                "jsonc"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautifyrc"
+            ]
+        },
+        "css": [
+            "css",
+            "less",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html",
+            "django-html"
+        ]
+    },
+}
