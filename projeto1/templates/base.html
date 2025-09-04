@@ -1,25 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Base{% endblock title %}</title>
 </head>
-<body>
-    <ul>
-        <li><a href="{% url 'inicio' %}">Início</a></li>
-        {% if request.user.is_authenticated %}
-            <li><a href="{% url 'user-detail' %}">Perfil</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-            <li><a href="{% url 'user-create' %}">Cadastre-se</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-        {% endif %}
 
-    </ul>
-    {% block header %}
-    {% endblock header %}
+<body>
+
+    {% include 'includes/navbar.html' %}
 
     {% block content %}
     {% endblock content %}
@@ -27,6 +18,10 @@
     {% block scripts %}
     {% endblock scripts %}
 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
+
 </html>
