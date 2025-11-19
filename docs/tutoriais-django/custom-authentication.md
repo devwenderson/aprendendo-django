@@ -60,6 +60,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.name or self.email.split("@")[0]
 ```
 
+## Configuração do `settings.py`
+O arquivo `models.py` deve estar dentro da pasta do app
+```python
+AUTH_USER_MODEL = "<app_name>.<class_name>"
+```
+
 ## Referências
 - [Medium - Building a custom user authentication system](https://medium.com/@farad.dev/building-a-custom-user-authentication-system-in-django-a-step-by-step-guide-4702eff29b58)
 - [YouTube - Custom User Model](https://www.youtube.com/watch?v=mndLkCEiflg)
