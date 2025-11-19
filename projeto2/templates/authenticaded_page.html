@@ -6,6 +6,6 @@
     <title>Sucesso</title>
 </head>
 <body>
-    <h1>Autenticou: {{ user.get_short_name }} </h1>
+    <h1>Autenticou: {{ request.user.get_full_name }} </h1>
 </body>
 </html>

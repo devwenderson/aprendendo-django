@@ -9,6 +9,7 @@ from app.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login, logout
 
+
 # Forms
 from app.forms import UserCreationForm
 
@@ -45,6 +46,7 @@ class LoginView(View):
             login(request, user)
             return redirect("user-data")
         else:
+            print(user)
             return redirect("login")
 
 class LogoutView(View):
