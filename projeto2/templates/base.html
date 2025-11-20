@@ -8,8 +8,12 @@
 </head>
 <body>
     <nav>
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'user-create' %}">Cadastrar</a>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}">Sair</a>
+        {% else %}
+            <a href="{% url 'login' %}">Entrar</a>
+            <a href="{% url 'user-create' %}">Cadastrar</a>
+        {% endif %}
     </nav>
     {% block content %}
     {% endblock content %}

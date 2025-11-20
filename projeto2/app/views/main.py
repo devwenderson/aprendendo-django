@@ -35,7 +35,7 @@ class LoginView(View):
     
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
-    # ################## TÁ COM ERRO ##################
+
     def post(self, request, *args, **kwargs):
         email = request.POST.get("email")
         password = request.POST.get("password")
@@ -50,10 +50,13 @@ class LoginView(View):
             return redirect("login")
 
 class LogoutView(View):
-    pass
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect("login")
 
-class DataUserView(View, LoginRequiredMixin):
+class DataUserView(LoginRequiredMixin, View):
     template_name = "authenticaded_page.html"
+    login_url = "/login/"
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)

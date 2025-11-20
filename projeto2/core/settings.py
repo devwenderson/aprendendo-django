@@ -130,3 +130,8 @@ AUTH_USER_MODEL = "app.User"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# =========== LOGIN URLS ===========  
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'user-data'
+LOGOUT_REDIRECT_URL = 'login'
